@@ -23,6 +23,10 @@ export function reducer(state = initialState, action: authActions.AuthActions): 
 function handleSetAuths(state: State, action: authActions.SetAuths): State {
   return {
     ...state,
-    userName: action.payload
+    userName: action.payload.userName,
+    friendlyName: action.payload.friendlyName
   };
 }
+
+export const getUserName = (state: State) => state.userName;
+export const getFriendlyName = (state: State) => state.friendlyName;
