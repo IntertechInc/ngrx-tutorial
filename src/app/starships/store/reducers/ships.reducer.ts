@@ -1,8 +1,13 @@
-import { Action } from '@ngrx/store';
-import { ShipsActions, ShipsActionTypes, SetShips } from '../actions/ships.actions';
+import { Action } from "@ngrx/store";
+import {
+  ShipsActions,
+  ShipsActionTypes,
+  SetShips
+} from "../actions/ships.actions";
+import { StarShip } from "../../../models/star-ship.model";
 
 export interface State {
-  allShips: any[];
+  allShips: StarShip[];
 }
 
 const initialState: State = {
@@ -11,7 +16,6 @@ const initialState: State = {
 
 export function reducer(state = initialState, action: ShipsActions): State {
   switch (action.type) {
-
     case ShipsActionTypes.SetShips:
       return handleSetShips(state, action);
 
@@ -24,7 +28,7 @@ function handleSetShips(state, action: SetShips): State {
   return {
     ...state,
     allShips: action.payload
-  }
+  };
 }
 
 export const getAllShips = (state: State) => state.allShips;

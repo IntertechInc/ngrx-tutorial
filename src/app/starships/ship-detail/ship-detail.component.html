@@ -1,0 +1,30 @@
+<h1>Ship Detail</h1>
+<div *ngIf="(starShip$ | async) != null">
+  <h2>{{(starShip$ | async).name}}</h2>
+  <table>
+    <tr>
+      <td width="20%"><strong>Manufacturer</strong></td>
+      <td width="50%">{{(starShip$ | async).manufacturer}}</td>
+    </tr>
+    <tr>
+      <td><strong>Cost In Credits</strong></td>
+      <td>{{(starShip$ | async).cost_in_credits}}</td>
+    </tr>
+    <tr>
+      <td><strong>Length</strong></td>
+      <td>{{(starShip$ | async).length}}</td>
+    </tr>
+    <tr>
+      <td><strong>Crew</strong></td>
+      <td>{{(starShip$ | async).crew}}</td>
+    </tr>
+    <tr>
+      <td><strong>Passengers</strong></td>
+      <td>{{(starShip$ | async).passengers}}</td>
+    </tr>
+    <tr>
+      <td><strong>Class</strong></td>
+      <td>{{(starShip$ | async).starship_class}}</td>
+    </tr>
+  </table>
+</div>

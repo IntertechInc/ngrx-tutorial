@@ -1,16 +1,18 @@
 <h1>{{user$ | async}}</h1>
-<hr/>
+<hr />
 <h2>First 10 Starships from API</h2>
 <table>
   <thead>
     <tr>
+      <th>ID</th>
       <th>Name</th>
       <th>Model</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let ship of starships$ | async">
-      <td style="width:30%">{{ship.name}}</td>
+      <td style="width:10%">{{ship.id}}</td>
+      <td style="width:30%"><a routerLink="{{ship.id}}/detail">{{ship.name}}</a></td>
       <td style="width:60%">{{ship.model}}</td>
     </tr>
   </tbody>

@@ -8,6 +8,7 @@ import * as fromShips from './store/reducers/index';
 import { ShipsEffects } from './store/effects/ships.effects';
 import { ShipListComponent } from './ship-list/ship-list.component';
 import { StarshipRoutingModule } from './starships-routing.module';
+import { ShipDetailComponent } from './ship-detail/ship-detail.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import { StarshipRoutingModule } from './starships-routing.module';
     StoreModule.forFeature('starships', fromShips.reducers),
     EffectsModule.forFeature([ShipsEffects])
   ],
-  declarations: [ShipListComponent]
+  declarations: [ShipListComponent, ShipDetailComponent]
 })
 export class StarshipsModule { }
